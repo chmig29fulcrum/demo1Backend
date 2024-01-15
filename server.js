@@ -13,12 +13,12 @@ const nodeEnv = process.env.NODE_ENV.trim();
 const portVar = `PORT_${nodeEnv.toUpperCase()}`;
 const dbVar = `DATABASE_${nodeEnv.toUpperCase()}`;
 console.log(portVar);
-console.log(process.env[portVar]);
-const port = process.env[portVar] || 4001;
+console.log(process.env.portVar);
+const port = process.env.portVar || 4001;
 
 const app = require('./app');
 
-const DB = process.env[dbVar];
+const DB = process.env.dbVar;
 
 mongoose
   .connect(DB, {
@@ -30,6 +30,10 @@ mongoose
   });
 
 const server = app.listen(port, () => {
+ // console.log(`portVar = ${portVar}`);
+ // console.log(`dbVar = ${dbVar}`);
+ // console.log(`process.env[portVar] = ${process.env[portVar]}`);
+
   console.log(`App running on port ${port}...`);
 });
 
