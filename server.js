@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-//const dotenv = require('dotenv');
-require('dotenv').config({ path: './config.env' });
+const dotenv = require('dotenv');
+//require('dotenv').config({ path: './config.env' });
 
 process.on('uncaughtException', (err) => {
   console.log('UNCAUGHT EXCEPTION! shutting down...');
@@ -13,6 +13,10 @@ dotenv.config({ path: './config.env' });
 const nodeEnv = process.env.NODE_ENV.trim();
 const portVar = `PORT_${nodeEnv.toUpperCase()}`;
 const dbVar = `DATABASE_${nodeEnv.toUpperCase()}`;
+console.log(process.env.portVar);
+console.log(process.env[portVar]);
+console.log(process.env.PORT_PRODUCTION);
+
 console.log(portVar);
 console.log(process.env[portVar]);
 const port = process.env[portVar] || 4001;
