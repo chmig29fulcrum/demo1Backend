@@ -13,6 +13,8 @@ dotenv.config({ path: './config.env' });
 const nodeEnv = process.env.NODE_ENV.trim();
 const portVar = `PORT_${nodeEnv.toUpperCase()}`;
 const dbVar = `DATABASE_${nodeEnv.toUpperCase()}`;
+
+console.log('All environment variables:', process.env);
 console.log(process.env.portVar);
 console.log(process.env[portVar]);
 console.log(process.env.PORT_PRODUCTION);
