@@ -8,7 +8,8 @@ process.on('uncaughtException', (err) => {
   process.exit(1);
 });
 
-dotenv.config({ path: './config.env' });
+//dotenv.config({ path: './config.env' });
+require('dotenv').config({ path: './config.env' });
 
 const nodeEnv = process.env.NODE_ENV.trim();
 const portVar = `PORT_${nodeEnv.toUpperCase()}`;
