@@ -12,6 +12,26 @@ process.on('uncaughtException', (err) => {
 //require('dotenv').config({ path: './config.env' });
 //require('dotenv').config()
 console.log('Current working directory:', process.cwd());
+
+
+// Get the current working directory
+const currentWorkingDirectory = process.cwd();
+
+// Read the contents of the current working directory
+fs.readdir(currentWorkingDirectory, (err, files) => {
+  if (err) {
+    console.error('Error reading directory:', err);
+    return;
+  }
+
+  // Print the list of files and directories
+  console.log('Contents of the current working directory:');
+  files.forEach((file) => {
+    console.log(file);
+  });
+});
+
+
 dotenv.config({ path: 'config.env' });
 
 const nodeEnv = process.env.NODE_ENV.trim();
