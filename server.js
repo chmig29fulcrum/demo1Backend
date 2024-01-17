@@ -12,9 +12,9 @@ process.on('uncaughtException', (err) => {
 //dotenv.config({ path: './config.env' });
 //require('dotenv').config({ path: './config.env' });
 //require('dotenv').config()
-console.log('Current working directory:', process.cwd());
+//console.log('Current working directory:', process.cwd());
 
-
+/*
 // Get the current working directory
 const currentWorkingDirectory = process.cwd();
 
@@ -37,7 +37,7 @@ fs.readdir(currentWorkingDirectory, (err, files) => {
     });
   }
 });
-
+*/
 
 dotenv.config({ path: 'config.env' });
 
@@ -45,13 +45,13 @@ const nodeEnv = process.env.NODE_ENV.trim();
 const portVar = `PORT_${nodeEnv.toUpperCase()}`;
 const dbVar = `DATABASE_${nodeEnv.toUpperCase()}`;
 
-console.log('All environment variables:', process.env);
-console.log(process.env.portVar);
-console.log(process.env[portVar]);
-console.log(process.env.PORT_PRODUCTION);
+//console.log('All environment variables:', process.env);
+//console.log(process.env.portVar);
+//console.log(process.env[portVar]);
+//console.log(process.env.PORT_PRODUCTION);
 
-console.log(portVar);
-console.log(process.env[portVar]);
+//console.log(portVar);
+//console.log(process.env[portVar]);
 const port = process.env[portVar] || 4001;
 
 const app = require('./app');
