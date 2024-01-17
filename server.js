@@ -18,6 +18,8 @@ console.log('Current working directory:', process.cwd());
 // Get the current working directory
 const currentWorkingDirectory = process.cwd();
 
+console.log('Current working directory:', currentWorkingDirectory);
+
 // Read the contents of the current working directory
 fs.readdir(currentWorkingDirectory, (err, files) => {
   if (err) {
@@ -27,9 +29,13 @@ fs.readdir(currentWorkingDirectory, (err, files) => {
 
   // Print the list of files and directories
   console.log('Contents of the current working directory:');
-  files.forEach((file) => {
-    console.log(file);
-  });
+  if (files.length === 0) {
+    console.log('No files or directories found.');
+  } else {
+    files.forEach((file) => {
+      console.log(file);
+    });
+  }
 });
 
 
